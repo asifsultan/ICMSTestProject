@@ -35,14 +35,12 @@ namespace ICMSTestProject
             this.EmployeeNumber = employeeNumber;
             this.FirstName = firstName;
             this.MiddleName = midName;
-            this.LastName = lastName;
-            
+            this.LastName = lastName;          
             this.Title = title;
             this.UnitOfAssignmnet = uoa;
             this.WorkPhone = wp;
             this.Extension = ext;
-            this.MobileNumber = mn;
-            
+            this.MobileNumber = mn;           
             this.WorkHours = wh;
             this.RDO = rdo;
             this.Department = dept;

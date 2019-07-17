@@ -23,7 +23,7 @@ namespace ICMSTestProject
         public void Initialize()
         {
             PropertiesCollection.driver = new ChromeDriver(@"C:\chrome");
-            PropertiesCollection.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
+            PropertiesCollection.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             PropertiesCollection.driver.Manage().Window.Maximize();
             testResult.Add(0, "Status");
             errorMessage.Add(0, "Reason of failure");
@@ -70,7 +70,7 @@ namespace ICMSTestProject
                     ReadData(index, "Supervisor Last Name", dataThird),
                     ReadData(index, "Supervisor Phone Number", dataThird),
                     ReadData(index, "Same as reporting party", dataThird),
-                    ReadData(index, "Number of Complainant", dataThird));
+                    ReadData(index, "Add CP to Case#", dataThird));
 
 
                     thirdPageList.Add(thirdPage);
@@ -101,7 +101,7 @@ namespace ICMSTestProject
                     ReadData(index, "Supervisor Middle Initial", dataFourth),
                     ReadData(index, "Supervisor Last Name", dataFourth),
                     ReadData(index, "Supervisor Phone Number", dataFourth),
-                    ReadData(index, "Number of involved parties", dataFourth));
+                    ReadData(index, "Add IP to Case#", dataFourth));
 
 
                     fourthPageList.Add(fourthPage);
@@ -118,22 +118,22 @@ namespace ICMSTestProject
                 if (ReadData(index, "Employee Number", dataFifth) != null)
                 {
                     FifthPage fifthPage = new FifthPage(ReadData(index, "Employee Number", dataFifth),
-                     ReadData(index, "First Name", dataFifth),
-                     ReadData(index, "Middle Initial", dataFifth),
-                     ReadData(index, "Last Name", dataFifth),
-                     ReadData(index, "Title", dataFifth),
-                     ReadData(index, "Unit of Assignment", dataFifth),
-                     ReadData(index, "Work Phone", dataFifth),
-                     ReadData(index, "Ext", dataFifth),
-                     ReadData(index, "Mobile Phone", dataFifth),
-                     ReadData(index, "Work Hours", dataFifth),
-                     ReadData(index, "RDO", dataFifth),
-                     ReadData(index, "Department", dataFifth),
-                     ReadData(index, "Supervisor First Name", dataFifth),
-                     ReadData(index, "Supervisor Middle Initial", dataFifth),
-                     ReadData(index, "Supervisor Last Name", dataFifth),
-                     ReadData(index, "Supervisor Phone Number", dataFifth),
-                     ReadData(index, "Number of Witness(es)", dataFifth));
+                        ReadData(index, "First Name", dataFifth),
+                        ReadData(index, "Middle Initial", dataFifth),
+                        ReadData(index, "Last Name", dataFifth),
+                        ReadData(index, "Title", dataFifth),
+                        ReadData(index, "Unit of Assignment", dataFifth),
+                        ReadData(index, "Work Phone", dataFifth),
+                        ReadData(index, "Ext", dataFifth),
+                        ReadData(index, "Mobile Phone", dataFifth),
+                        ReadData(index, "Work Hours", dataFifth),
+                        ReadData(index, "RDO", dataFifth),
+                        ReadData(index, "Department", dataFifth),
+                        ReadData(index, "Supervisor First Name", dataFifth),
+                        ReadData(index, "Supervisor Middle Initial", dataFifth),
+                        ReadData(index, "Supervisor Last Name", dataFifth),
+                        ReadData(index, "Supervisor Phone Number", dataFifth),
+                        ReadData(index, "Add Witness to Case#", dataFifth));
 
 
                     fifthPageList.Add(fifthPage);
@@ -159,6 +159,7 @@ namespace ICMSTestProject
 
                     Console.WriteLine("Running Test number : " + i);
 
+
                     PropertiesCollection.driver.Navigate().GoToUrl("http://ceopn01.isd.lacounty.gov/");
                     PropertiesCollection.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
@@ -175,8 +176,8 @@ namespace ICMSTestProject
                                             FormIntake.ReadData(i, "Middle Initial", dataSecond), FormIntake.ReadData(i, "Last Name", dataSecond), FormIntake.ReadData(i, "Work Phone", dataSecond),
                                             FormIntake.ReadData(i, "Mobile Phone", dataSecond), FormIntake.ReadData(i, "Work Extension", dataSecond), FormIntake.ReadData(i, "Work Hours", dataSecond),
                                             FormIntake.ReadData(i, "RDO", dataSecond), FormIntake.ReadData(i, "RP Unit of Assignment", dataSecond), FormIntake.ReadData(i, "RP Department", dataSecond),
-                                            FormIntake.ReadData(i, "Rp Street Address", dataSecond), FormIntake.ReadData(i, "RP Address Line", dataSecond), FormIntake.ReadData(i, "City", dataSecond),
-                                            FormIntake.ReadData(i, "State", dataSecond), FormIntake.ReadData(i, "Zip", dataSecond), FormIntake.ReadData(i, "I.Supervisor F Name", dataSecond),
+                                            FormIntake.ReadData(i, "Email", dataSecond), FormIntake.ReadData(i, "Rp Street Address", dataSecond), FormIntake.ReadData(i, "RP Address Line", dataSecond),
+                                            FormIntake.ReadData(i, "City", dataSecond), FormIntake.ReadData(i, "State", dataSecond), FormIntake.ReadData(i, "I.Supervisor F Name", dataSecond),
                                             FormIntake.ReadData(i, "I.Supervisor M Initial", dataSecond), FormIntake.ReadData(i, "I.Supervisor L Name", dataSecond), FormIntake.ReadData(i, "I.Supervisor Ph No", dataSecond),
                                             FormIntake.ReadData(i, "Same as reporting party", dataSecond), FormIntake.ReadData(i, "RP F Name", dataSecond), FormIntake.ReadData(i, "RP M Initial", dataSecond),
                                             FormIntake.ReadData(i, "RP L Name", dataSecond), FormIntake.ReadData(i, "Notified Supervisor", dataSecond), FormIntake.ReadData(i, "Supervisor F Name", dataSecond),
@@ -198,7 +199,7 @@ namespace ICMSTestProject
                     Console.WriteLine("Sixth Page");
 
                     addData.FillSixthPage(FormIntake.ReturnDate(), FormIntake.ReadData(i, "Nature of complaint", dataSixth),
-                                           FormIntake.ReadData(i, "Reason for occurance", dataSixth));
+                                            FormIntake.ReadData(i, "Reason for occurance", dataSixth));
                     Console.WriteLine("Seventh Page");
 
                     addData.FillSeventhPage(FormIntake.ReadData(i, "Race / Ethnicity", dataSeventh), FormIntake.ReadData(i, "Gender", dataSeventh),

@@ -99,6 +99,9 @@ namespace ICMSTestProject
         [FindsBy(How = How.Id, Using = "input_5_25")]
         public IWebElement RPDept { get; set; }
 
+        [FindsBy(How = How.Id, Using = "input_5_117")]
+        public IWebElement RPEmail { get; set; }
+
         [FindsBy(How = How.Id, Using = "input_5_26_3")]
         public IWebElement RPHeadFN { get; set; }
 
@@ -144,8 +147,12 @@ namespace ICMSTestProject
         [FindsBy(How = How.Id, Using = "input_5_62_4")]
         public IWebElement ReportingPartyMI { get; set; }
 
+        
+
         [FindsBy(How = How.Id, Using = "input_5_62_6")]
         public IWebElement ReportingPartyLN { get; set; }
+
+       
 
         [FindsBy(How = How.Id, Using = "choice_5_33_0")]
         public IWebElement NotifySuperVisorYes { get; set; }
@@ -489,8 +496,8 @@ namespace ICMSTestProject
 
         public void FillSecondPage(string empNumber, string empTitle, string empFistName, string empMInitial,
             string empLastName, string empWorkNum, string empMobileNum, string empWorkExt, string empWorkHr,
-            string empRdo, string empUnitAssignment, string empRPDept, string empRPStreetAddress,
-            string empRPAddressline, string empRPCity, string empRPState, string empRPZip,
+            string empRdo, string empUnitAssignment, string empRPDept, string email, string empRPStreetAddress,
+            string empRPAddressline, string empRPCity, string empRPState,
             string empRPISFirstName, string empRPISMInitial, string empRPISLastName, string empRPISPhoneNo,
             string sameAsReportingParty, string ReportingFN, string ReportingMI, string ReportingLN, string notifySupervisor,
             string supervisorFN, string supervisorMI, string supervisorLN, string dateNotified, string timeHH, string timeMM,
@@ -501,7 +508,7 @@ namespace ICMSTestProject
             ENumber.EnterText(empNumber);
             ETitle.EnterText(empTitle);
             EFirstName.EnterText(empFistName);
-            EMiddleInitial.EnterText(empMInitial);
+            //EMiddleInitial.EnterText(empMInitial);
             ELastName.EnterText(empLastName);
             EWorkNo.EnterText(empWorkNum);
             EMobileNo.EnterText(empMobileNum);
@@ -510,6 +517,7 @@ namespace ICMSTestProject
             ERDO.EnterText(empRdo);
             EUnitAssignement.EnterText(empUnitAssignment);
             RPDept.EnterText(empRPDept);
+            RPEmail.EnterText(email);
             //RPHeadFN.EnterText("Andrew");
             //RPHeadMI.EnterText("T");
             //RPHeadLN.EnterText("Tran");
@@ -517,7 +525,6 @@ namespace ICMSTestProject
             RPAddressLine2.EnterText(empRPAddressline);
             RPCity.EnterText(empRPCity);
             RPState.EnterText(empRPState);
-            RPZip.EnterText(empRPZip);
 
             RPISFirstName.EnterText(empRPISFirstName);
             RPISMInitial.EnterText(empRPISMInitial);
