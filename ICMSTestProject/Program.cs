@@ -11,6 +11,8 @@ namespace ICMSTestProject
 {
     class Program
     {
+
+        string fileLocation = "C:\\ICMSDataV2-1.1.xlsx";
         // Browser web reference
         // IWebDriver driver = new ChromeDriver();
         Dictionary<int, string> testResult = new Dictionary<int, string>();
@@ -30,6 +32,7 @@ namespace ICMSTestProject
 
 
         }
+
         [Test]
         public void CaseForm()
         {
@@ -40,13 +43,13 @@ namespace ICMSTestProject
             List<FifthPage> fifthPageList = new List<FifthPage>();
 
             List<Datacollection> dataFirst = new List<Datacollection>();
-            dataFirst = ExcelLibrary.PopulateInCollection(@"C:\ICMSDataV2-1.1.xlsx", "First");
+            dataFirst = ExcelLibrary.PopulateInCollection(fileLocation, "First");
 
             List<Datacollection> dataSecond = new List<Datacollection>();
-            dataSecond = ExcelLibrary.PopulateInCollection(@"C:\ICMSDataV2-1.1.xlsx", "Second - RP");
+            dataSecond = ExcelLibrary.PopulateInCollection(fileLocation, "Second - RP");
 
             List<Datacollection> dataThird = new List<Datacollection>();
-            dataThird = ExcelLibrary.PopulateInCollection(@"C:\ICMSDataV2-1.1.xlsx", "Third - Complainant");
+            dataThird = ExcelLibrary.PopulateInCollection(fileLocation, "Third - Complainant");
 
             for (int index = 1; index <= dataThird.Count; index++)
             {
@@ -78,7 +81,7 @@ namespace ICMSTestProject
 
             }
             List<Datacollection> dataFourth = new List<Datacollection>();
-            dataFourth = ExcelLibrary.PopulateInCollection(@"C:\ICMSDataV2-1.1.xlsx", "Fourth - Involved Party");
+            dataFourth = ExcelLibrary.PopulateInCollection(fileLocation, "Fourth - Involved Party");
 
             for (int index = 1; index <= dataThird.Count; index++)
             {
@@ -110,7 +113,7 @@ namespace ICMSTestProject
             }
 
             List<Datacollection> dataFifth = new List<Datacollection>();
-            dataFifth = ExcelLibrary.PopulateInCollection(@"C:\ICMSDataV2-1.1.xlsx", "Fifth - Witness");
+            dataFifth = ExcelLibrary.PopulateInCollection(fileLocation, "Fifth - Witness");
 
             for (int index = 1; index <= dataFifth.Count; index++)
             {
@@ -142,15 +145,15 @@ namespace ICMSTestProject
             }
 
             List<Datacollection> dataSixth = new List<Datacollection>();
-            dataSixth = ExcelLibrary.PopulateInCollection(@"C:\ICMSDataV2-1.1.xlsx", "Sixth - Nature");
+            dataSixth = ExcelLibrary.PopulateInCollection(fileLocation, "Sixth - Nature");
 
             List<Datacollection> dataSeventh = new List<Datacollection>();
-            dataSeventh = ExcelLibrary.PopulateInCollection(@"C:\ICMSDataV2-1.1.xlsx", "Seventh - VoluntaryEEO");
+            dataSeventh = ExcelLibrary.PopulateInCollection(fileLocation, "Seventh - VoluntaryEEO");
 
             List<Datacollection> dataEighth = new List<Datacollection>();
-            dataEighth = ExcelLibrary.PopulateInCollection(@"C:\ICMSDataV2-1.1.xlsx", "Eighth - Confirmation");
+            dataEighth = ExcelLibrary.PopulateInCollection(fileLocation, "Eighth - Confirmation");
 
-            for (int i = 1; i <= ExcelLibrary.getTotalRow(@"C:\ICMSDataV2-1.1.xlsx", "First"); i++)
+            for (int i = 1; i <= ExcelLibrary.getTotalRow(fileLocation, "First"); i++)
             {
 
                 try
